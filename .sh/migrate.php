@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/vendor/autoload.php';
+chdir(__DIR__ . '/..');
+require_once 'bootstrap.php';
 
 use App\Infrastructure\Database;
 
 $pdo = Database::connect();
 
-$migrations = glob(__DIR__ . '/migrations/*.php');
+$migrations = glob('migrations/*.php');
 
 foreach ($migrations as $file) {
 	echo "Futtatás: " . basename($file) . "\n";

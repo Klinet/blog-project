@@ -1,2 +1,12 @@
 {
+    "name": "blog/app",
+    "description": "PHP native probafeladat",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Attila Kali",
+            "email": "akali.klinet@gmail.com"
+        }
+    ],
+    "require": {}
 }

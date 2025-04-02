@@ -8,5 +8,7 @@
             "email": "akali.klinet@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }

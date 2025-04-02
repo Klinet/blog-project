@@ -1,0 +1,8 @@
+/vendor/
+/log/
+/database/*.sqlite
+/.env
+/project_structure.txt
+/.idea/
+/*.log
+.DS_Store

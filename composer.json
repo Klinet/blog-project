@@ -14,12 +14,18 @@
             "Database\\": "database/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "require": {
         "php": "^8.2",
         "ext-pdo": "*",
         "smarty/smarty": "^5.4"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.24"
+        "fakerphp/faker": "^1.24",
+        "phpunit/phpunit": "^12.0"
     }
 }

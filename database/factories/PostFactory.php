@@ -2,18 +2,26 @@
 
 namespace Database\Factories;
 
-use Faker\Factory;
+use App\Infrastructure\FakerGenerator;
 
 final class PostFactory
 {
+	private static $currentDate = null;
+
 	public static function make(array $override = []): array
 	{
-		$faker = Factory::create(getenv('FAKER_LOCALE') ?: 'en_US');
+		if (self::$currentDate === null) {
+			self::$currentDate = new \DateTime();
+		}
+
+		self::$currentDate->modify('+1 day');
+
+		$faker = FakerGenerator::get();
 
 		return array_merge([
 			'title' => $faker->sentence,
-			'content' => $faker->paragraph(4),
-			'publish_at' => date('Y-m-d H:i:s'),
+			'content' => $faker->paragraph(2),
+			'publish_at' => self::$currentDate->format('Y-m-d H:i:s'),
 		], $override);
 	}
 }
